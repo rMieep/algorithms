@@ -10,15 +10,8 @@ public abstract class SortAlgorithmTest {
     @Test
     public void testSortAlgorithm() {
         SortAlgorithm algorithm = createInstance();
-        int[] array = algorithm.sort(new int[]{8, 6, 4, 1, 5, 2, 7, 3, 9});
-        Assertions.assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, array);
-    }
-
-    @Test
-    public void testSortAlgorithmInPlace() {
-        SortAlgorithm algorithm = createInstance();
-        int[] array = new int[]{3, 6, 4, 1, 2, 5, 7, 8, 9};
-        algorithm.sortInPlace(array);
+        int[] array = new int[]{8, 6, 4, 1, 5, 2, 7, 3, 9};
+        algorithm.sort(array);
         Assertions.assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, array);
     }
 

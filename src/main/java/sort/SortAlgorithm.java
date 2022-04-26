@@ -1,8 +1,7 @@
 package sort;
 
 public interface SortAlgorithm {
-    int[] sort(int[] array);
-    void sortInPlace(int[] array);
+    void sort(int[] array);
 
     default void swap(int[] array, int i, int j) {
         int tmp = array[i];

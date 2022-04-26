@@ -2,13 +2,7 @@ package sort;
 
 public class SelectionSort implements SortAlgorithm {
     @Override
-    public int[] sort(int[] array) {
-        this.sortInPlace(array);
-        return array;
-    }
-
-    @Override
-    public void sortInPlace(int[] array) {
+    public void sort(int[] array) {
         int n = array.length;
 
         for(int i = 0; i < n; i++) {

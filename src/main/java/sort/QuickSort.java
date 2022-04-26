@@ -3,14 +3,8 @@ package sort;
 public class QuickSort implements SortAlgorithm {
 
     @Override
-    public int[] sort(int[] array) {
-        this.sortInPlace(array);
-        return array;
-    }
-
-    @Override
-    public void sortInPlace(int[] array) {
-        sort(array, 0, array.length - 1);
+    public void sort(int[] array) {
+        this.sort(array, 0, array.length);
     }
 
     private void sort(int[] array, int left, int right) {
