@@ -4,7 +4,7 @@ public class QuickSort implements SortAlgorithm {
 
     @Override
     public void sort(int[] array) {
-        this.sort(array, 0, array.length);
+        this.sort(array, 0, array.length - 1);
     }
 
     private void sort(int[] array, int left, int right) {
