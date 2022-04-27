@@ -4,6 +4,10 @@ public class QuickSort implements SortAlgorithm {
 
     @Override
     public void sort(int[] array) {
+        if(array == null) {
+            throw new IllegalArgumentException("array=null");
+        }
+
         this.sort(array, 0, array.length - 1);
     }
 

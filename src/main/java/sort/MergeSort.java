@@ -4,6 +4,10 @@ public class MergeSort implements SortAlgorithm {
 
     @Override
     public void sort(int[] array) {
+        if(array == null) {
+            throw new IllegalArgumentException("array=null");
+        }
+
         sort(array, 0, array.length - 1);
     }
 

@@ -3,6 +3,10 @@ package sort;
 public class SelectionSort implements SortAlgorithm {
     @Override
     public void sort(int[] array) {
+        if(array == null) {
+            throw new IllegalArgumentException("array=null");
+        }
+
         int n = array.length;
 
         for(int i = 0; i < n; i++) {

@@ -16,11 +16,42 @@ public abstract class SortAlgorithmTest {
     }
 
     @Test
+    public void testSortAlgorithmEmpty() {
+        SortAlgorithm algorithm = createInstance();
+        int[] array = new int[]{};
+        algorithm.sort(array);
+        Assertions.assertArrayEquals(new int[]{}, array);
+    }
+
+    @Test
+    public void testSortAlgorithmThrows() {
+        SortAlgorithm algorithm = createInstance();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> algorithm.sort(null));
+    }
+
+    @Test
     public void testSwap() {
         SortAlgorithm algorithm = createInstance();
         int[] array = new int[]{2,1};
         algorithm.swap(array, 0, 1);
         Assertions.assertEquals(1, array[0]);
         Assertions.assertEquals(2, array[1]);
+    }
+
+    @Test
+    public void testSwapThrows() {
+        SortAlgorithm algorithm = createInstance();
+        int[] array = new int[]{2,1};
+        Assertions.assertThrows(IllegalArgumentException.class, () -> algorithm.swap(null, 0, 1));
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> algorithm.swap(array, 3, 1),
+                "array.length=2, i=3, j=1"
+        );
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> algorithm.swap(array, 1, 3),
+                "array.length=2, i=1, j=3"
+        );
     }
 }

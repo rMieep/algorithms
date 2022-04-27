@@ -8,6 +8,16 @@ public abstract class SearchAlgorithmTest {
     protected abstract SearchAlgorithm createInstance();
 
     @Test
+    public void testSearchAlgorithmThrows() {
+        SearchAlgorithm algorithm = createInstance();
+        int value = 3;
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> algorithm.search(null, value)
+        );
+    }
+
+    @Test
     public void testSearchAlgorithmValuePresent() {
         SearchAlgorithm algorithm = createInstance();
         int value = 3;

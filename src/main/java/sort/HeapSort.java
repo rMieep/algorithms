@@ -4,6 +4,10 @@ public class HeapSort implements SortAlgorithm {
 
     @Override
     public void sort(int[] array) {
+        if(array == null) {
+            throw new IllegalArgumentException("array=null");
+        }
+
         int n = array.length;
         buildHeap(array, n);
 

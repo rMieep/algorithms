@@ -3,6 +3,10 @@ package sort;
 public class BubbleSort implements SortAlgorithm {
     @Override
     public void sort(int[] array) {
+        if(array == null) {
+            throw new IllegalArgumentException("array=null");
+        }
+
         int n = array.length;
 
         for(int i = 1; i < n; i++) {

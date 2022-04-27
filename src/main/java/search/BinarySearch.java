@@ -4,10 +4,14 @@ public class BinarySearch implements SearchAlgorithm {
 
     @Override
     public int search(int[] array, int value) {
+        if(array == null) {
+            throw new IllegalArgumentException("array=null");
+        }
+
         int leftIndex = 0;
         int rightIndex = array.length - 1;
 
-        while(leftIndex < rightIndex) {
+        while(leftIndex <= rightIndex) {
             int middleIndex = (leftIndex + rightIndex) / 2;
 
             if(array[middleIndex] == value) {
